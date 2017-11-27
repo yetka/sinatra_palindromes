@@ -1,13 +1,15 @@
-def palindrome(string)
-  reverse_letters = []
-  letters = string.split(//)
-  letters.each do |letter|
-    reverse_letters.unshift(letter)
+class Word
+  def initialize (string)
+    @string = string
   end
-  new_string = reverse_letters.join("")
-  if string == new_string
-    true
-  else
-    false
+
+  def palindrome?
+    reverse_letters = []
+    letters = @string.split(//)
+    letters.each do |letter|
+      reverse_letters.unshift(letter)
+    end
+    new_string = reverse_letters.join("")
+    @string.eql?(new_string)
   end
 end

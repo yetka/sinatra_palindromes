@@ -8,7 +8,7 @@ get('/') do
   erb(:input)
 end
 
-get('/output') do
+post('/output') do
   @word = params.fetch("user_word")
 
   new_word = Word.new(@word)
